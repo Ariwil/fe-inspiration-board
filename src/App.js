@@ -14,7 +14,7 @@ function App() {
   const [cardList, setCardList] = useState([]);
   const [boardForm, setBoardForm] = useState(true); //-----------------ADDED-------------
 
-  const URL = "http://127.0.0.1:5000";
+  const URL = "https://inspiration-backend.herokuapp.com";
 
   // const InitialList = [
   //   {
