@@ -1,3 +1,4 @@
+//-Card doesn’t automatically show up when added
 import PropTypes from "prop-types";
 
 import "./Card.css";
@@ -10,36 +11,6 @@ function Card(props) {
   const updateLike = props.updateLike;
   const deleteCard = props.deleteCard;
 
-  // const updateLike = (cardId, updatedPrice, liked) => {
-  //   const newCardList = [];
-  //   axios
-  //     .patch(`${URL}/cards/${cardId}/${liked}`)
-  //     .then((response) => {
-  //       for (const card of cardList) {
-  //         if (card.id !== cardId) {
-  //           newCardList.push(card);
-  //         } else {
-  //           const newCard = {
-  //             ...card,
-  //             liked: !card.liked,
-  //             likes_count: updatedPrice,
-  //           };
-  //           newCardList.push(newCard);
-  //         }
-  //       }
-  //       setCardList(newCardList);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-  // const toggleSelected = (cardId) => {
-  //   if (props.selected === false) {
-  //     selectCard(cardId);
-  //   } else {
-  //     unselectCard(cardId);
-  //   }
-  // };
   function changeLikes(liked) {
     if (!liked) {
       updateLike(cardId, numOfLikes + 1, "like");

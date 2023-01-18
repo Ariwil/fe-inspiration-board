@@ -8,8 +8,8 @@ function CardList(props) {
   const selectedBoard = props.selectedBoard;
 
   for (const card of cardList) {
-    if (card.selected === true) {
-      //ADDED -- need to figure out how card.board_id would be changed using cardBoardMap
+    if (card.board_id === selectedBoard.id) {
+      // if (card.selected === true) {
       cardComponents.push(
         <Card
           key={card.id}

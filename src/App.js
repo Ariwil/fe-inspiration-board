@@ -100,7 +100,7 @@ function App() {
       });
   };
 
-  //TO ADD THIS WITH AXIOS - NEED A PATCH ROUTE IN be (but don't think we need it to connect to axios? wait-- the setcards update might need to tho)
+  //TO ADD THIS WITH AXIOS - NEED A PATCH ROUTE IN be? (but don't think we need it to connect to axios? wait-- the setcards update might need to tho)
   const selectBoard = (boardId) => {
     const newBoardList = [];
     //turn every boards 'selected' key to false if not the selected board
