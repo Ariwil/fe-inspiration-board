@@ -133,10 +133,8 @@ body {
 }
 
 #Board-Title {
-  /* background: #ffffff; */
   text-decoration: unset;
   text-align: center;
-  /* color: rgb(242, 239, 245); */
   font-size: x-large;
   font-family: fantasy;
   ;
@@ -145,7 +143,6 @@ body {
 #Selected-Board-Title {
   text-decoration: unset;
   text-align: center;
-  /* color: rgb(242, 239, 245); */
   font-size: x-large;
   font-family: fantasy;
   ;
@@ -154,7 +151,6 @@ body {
 #Create-New-Board-Title {
   text-decoration: unset;
   text-align: center;
-  /* color: rgb(242, 239, 245); */
   font-size: x-large;
   font-family: fantasy;
   ;
@@ -163,7 +159,6 @@ body {
 #Cards-For-Title {
   text-decoration: unset;
   text-align: center;
-  /* color: rgb(242, 239, 245); */
   font-size: x-large;
   font-family: fantasy;
   ;
@@ -172,7 +167,6 @@ body {
 #Create-New-Card-Title {
   text-decoration: unset;
   text-align: center;
-  /* color: rgb(242, 239, 245); */
   font-size: x-large;
   font-family: fantasy;
   ;
@@ -181,7 +175,6 @@ body {
 #Emoji-Title {
   text-decoration: unset;
   text-align: center;
-  /* color: rgb(242, 239, 245); */
   font-size: x-large;
   font-family: fantasy;
   ;
