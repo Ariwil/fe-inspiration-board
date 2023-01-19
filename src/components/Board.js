@@ -8,6 +8,7 @@ function Board(props) {
   // const boardName = props.name;
   const selectBoard = props.selectBoard;
   const unselectBoard = props.unselectBoard;
+  const deleteBoard = props.deleteBoard;
 
   const toggleSelected = (boardId) => {
     if (props.selected === false || props.selected == null) {
@@ -24,6 +25,7 @@ function Board(props) {
         {/* <li>ID: {boardId}</li> */}
         <li onClick={() => toggleSelected(boardId)}>{boardTitle}</li>
         {/* <li>Name: {boardName}</li> */}
+        <button onClick={() => deleteBoard(boardId)}>Delete</button>
       </ul>
     </div>
   );

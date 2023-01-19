@@ -17,6 +17,7 @@ function BoardList(props) {
         selected={board.selected}
         selectBoard={props.selectBoard}
         unselectBoard={props.unselectBoard}
+        deleteBoard={props.deleteBoard}
       />
     );
   }

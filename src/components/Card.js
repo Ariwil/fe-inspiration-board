@@ -21,8 +21,10 @@ function Card(props) {
 
   const buttonContent = liked ? "💗" : "🤍";
 
+  const className = cardId % 2 === 0 ? "blue-card-color" : "purple-card-color";
+
   return (
-    <div>
+    <div className={className}>
       <h3>{cardMessage}</h3>
       <p>{numOfLikes}</p>
       <button onClick={() => changeLikes(liked)}>{buttonContent} </button>

@@ -164,3 +164,11 @@ body {
   font-family: fantasy;
   ;
 }
+
+.blue-card-color {
+  background-color: aqua;
+}
+
+.purple-card-color {
+  background-color: rgb(98, 68, 230);
+}

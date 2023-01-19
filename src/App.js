@@ -214,6 +214,23 @@ function App() {
       });
   };
 
+  const deleteBoard = (boardId) => {
+    axios
+      .delete(`${URL}/boards/${boardId}`)
+      .then(() => {
+        const newBoardList = [];
+        for (const board of boardList) {
+          if (board.id !== boardId) {
+            newBoardList.push(board);
+          }
+        }
+        setBoardList(newBoardList);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="App">
       <h1 className="App-header"> Mindful Moments</h1>
@@ -225,6 +242,7 @@ function App() {
               boardList={boardList}
               selectBoard={selectBoard}
               unselectBoard={unselectBoard}
+              deleteBoard={deleteBoard}
             />
           </main>
         </div>
