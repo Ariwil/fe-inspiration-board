@@ -28,7 +28,6 @@ function Card(props) {
       <h3>{cardMessage}</h3>
       <p>{numOfLikes}</p>
       <button onClick={() => changeLikes(liked)}>{buttonContent} </button>
-      {/* <button onClick={() => changeLikes(liked)}>"💔" </button> */}
       <button onClick={() => deleteCard(cardId)}>Delete</button>
     </div>
   );
@@ -37,7 +36,9 @@ function Card(props) {
 Card.propTypes = {
   id: PropTypes.number.isRequired,
   message: PropTypes.string.isRequired,
-  selectCard: PropTypes.func.isRequired,
-  unselectCard: PropTypes.func.isRequired,
+  liked: PropTypes.bool,
+  numOfLikes: PropTypes.number.isRequired,
+  updateLike: PropTypes.func.isRequired,
+  deleteCard: PropTypes.func.isRequired,
 };
 export default Card;

@@ -1,5 +1,3 @@
-//fix submit button (want to disable it when no text)
-//fix input border colors (should turn white when text is in it but it stays red)
 import "./NewCard.css";
 import PropTypes from "prop-types";
 
@@ -7,28 +5,20 @@ import { useState } from "react";
 
 const INITIAL_FORM_DATA = {
   message: "",
-  // //---------------------------------ADDED--------------------------------------------
-  // messageLength: 0,
-  // liked: false,
-  // //SHOULD we add numOfLikes: 0
-  // //-------------------------------------------------------------------------------------
+  messageLength: 0,
 };
 
 const NewCard = (props) => {
   const [CardData, setCardData] = useState(INITIAL_FORM_DATA);
-  const messageLength = CardData.message.length;
+  const messageLength = CardData.messageLength;
   let selectedBoard = props.selectedBoard;
 
-  //delete the console logs later -----------------------------------------
-  // if (selectedBoard.length === 0) {
   if (Object.keys(selectedBoard).length === 0) {
-    console.log("No selected board");
     selectedBoard = false;
   } else {
-    console.log("A board is selected");
   }
-  //-------------------------------------------------------------------------
 
+  // let messageLength = 0;
   const handleChange = (e) => {
     let datafield = e.target.value;
     const NewCardData = {
@@ -36,9 +26,9 @@ const NewCard = (props) => {
       [e.target.name]: datafield,
       board_id: selectedBoard.id,
       likes_count: 0,
-      // messageLength: datafield.length, //------------------ADDED------------
+      messageLength: datafield.length,
     };
-    console.log("NEW CARD DATAAAA", NewCardData);
+    // messageLength = datafield.length;
     setCardData(NewCardData);
   };
 
@@ -48,14 +38,11 @@ const NewCard = (props) => {
     setCardData(INITIAL_FORM_DATA);
   };
 
-  // const tooLong = CardData.messageLength < 41 ? false : true; //-----------------ADDED---------------------
+  const tooLong = messageLength < 41 ? false : true;
 
-  const inputClass = CardData.message /*|| !tooLong*/ ? "" : "empty"; //SOMETHING IS WRONG HEREEEE
-  //if input fields for Title or Owner's Name are empty ->
+  const inputClass = CardData.message /*|| !tooLong*/ ? "" : "empty"; //tooLong doesn't work here??
+  //if input field for card message is empty ->
   //red box around input boxes and submit button unavailable
-  // if (CardData.title === '' || CardData.name==='') {
-  //   const borderColor =
-  // }
   return (
     <form onSubmit={handleNewCardSubmit}>
       <label htmlFor="message">Message</label>
@@ -71,7 +58,7 @@ const NewCard = (props) => {
       <input
         type="submit"
         value="Add Card"
-        disabled={!CardData.message || !selectedBoard /*|| tooLong*/}
+        disabled={!CardData.message || !selectedBoard || tooLong}
       />
     </form>
   );
@@ -79,6 +66,7 @@ const NewCard = (props) => {
 
 NewCard.propTypes = {
   addCardCallback: PropTypes.func.isRequired,
+  selectedBoard: PropTypes.object.isRequired,
 };
 
 export default NewCard;

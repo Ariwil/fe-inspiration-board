@@ -9,19 +9,14 @@ function CardList(props) {
 
   for (const card of cardList) {
     if (card.board_id === selectedBoard.id) {
-      // if (card.selected === true) {
       cardComponents.push(
         <Card
           key={card.id}
           id={card.id}
           message={card.message}
-          selected={card.selected}
           liked={card.liked}
           numOfLikes={card.likes_count}
-          selectCard={props.selectCard}
-          unselectCard={props.unselectCard}
           updateLike={props.updateLike}
-          selectedBoard={selectedBoard}
           deleteCard={props.deleteCard}
         />
       );
@@ -36,10 +31,14 @@ CardList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       message: PropTypes.string.isRequired,
+      board_id: PropTypes.number,
+      likes_count: PropTypes.number.isRequired,
+      liked: PropTypes.bool,
     })
   ),
-  selectCard: PropTypes.func.isRequired,
-  unselectCard: PropTypes.func.isRequired,
+  updateLike: PropTypes.func.isRequired,
+  selectedBoard: PropTypes.object.isRequired,
+  deleteCard: PropTypes.func.isRequired,
 };
 
 export default CardList;

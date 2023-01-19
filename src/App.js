@@ -90,7 +90,6 @@ function App() {
           ...newCardInfo,
           id: response.data.id,
           board_id: selectedBoard.id,
-          // messageLength: newCardInfo.message.length /*response.data.id*/,
         };
         newCards.push(newCardJSON);
         setCardList(newCards);
@@ -100,7 +99,6 @@ function App() {
       });
   };
 
-  //TO ADD THIS WITH AXIOS - NEED A PATCH ROUTE IN be? (but don't think we need it to connect to axios? wait-- the setcards update might need to tho)
   const selectBoard = (boardId) => {
     const newBoardList = [];
     //turn every boards 'selected' key to false if not the selected board
@@ -173,7 +171,7 @@ function App() {
     }
   }
 
-  const updateLike = (cardId, updatedPrice, liked) => {
+  const updateLike = (cardId, updatedCount, liked) => {
     const newCardList = [];
     axios
       .patch(`${URL}/cards/${cardId}/${liked}`)
@@ -185,7 +183,7 @@ function App() {
             const newCard = {
               ...card,
               liked: !card.liked,
-              likes_count: updatedPrice,
+              likes_count: updatedCount,
             };
             newCardList.push(newCard);
           }
@@ -234,7 +232,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="App-header"> Mindful Moments</h1>
-      <div class="container">
+      <div className="container">
         <div id="Board-Title">
           <h2> BOARDS</h2>
           <main className="Boards">
@@ -273,7 +271,7 @@ function App() {
           <div className="Cards-For">
             <CardList
               cardList={cardList}
-              selectBoard={selectBoard}
+              // selectBoard={selectBoard}
               updateLike={updateLike}
               selectedBoard={selectedBoard}
               deleteCard={deleteCard}

@@ -1,6 +1,3 @@
-//fix submit button (want to disable it when no text)
-//fix input border colors (should turn white when text is in it but it stays red)
-//fix message input(text doesn't show up in text box when typing)
 import "./NewBoard.css";
 import PropTypes from "prop-types";
 
@@ -27,16 +24,10 @@ const NewBoard = (props) => {
     e.preventDefault();
     props.addBoardCallback(BoardData);
     setBoardData(INITIAL_FORM_DATA);
-    //DO WE NEED TO SET CARD DATA TOO?
   };
   const ownerBorderClass = BoardData.owner ? "" : "empty";
   const titleBorderClass = BoardData.title ? "" : "empty";
-  // const inputClass = BoardData.name & BoardData.title ? "" : "empty";
-  //if input fields for Title or Owner's Name are empty ->
-  //red box around input boxes and submit button unavailable
-  // if (BoardData.title === '' || BoardData.name==='') {
-  //   const borderColor =
-  // }
+
   if (props.boardForm === true) {
     return (
       <form onSubmit={handleNewBoardSubmit}>
@@ -74,6 +65,7 @@ const NewBoard = (props) => {
 
 NewBoard.propTypes = {
   addBoardCallback: PropTypes.func.isRequired,
+  boardForm: PropTypes.bool.isRequired,
 };
 
 export default NewBoard;

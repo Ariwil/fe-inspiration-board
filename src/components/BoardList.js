@@ -1,4 +1,3 @@
-//fix numbering on display of board list (keeps displaying the number 1 for every board)
 import PropTypes from "prop-types";
 
 import Board from "./Board";
@@ -13,7 +12,7 @@ function BoardList(props) {
         key={board.id}
         id={board.id}
         title={board.title}
-        name={board.owner}
+        name={board.owner} //
         selected={board.selected}
         selectBoard={props.selectBoard}
         unselectBoard={props.unselectBoard}
@@ -30,11 +29,13 @@ BoardList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
+      owner: PropTypes.string.isRequired,
+      selected: PropTypes.bool,
     })
   ),
   selectBoard: PropTypes.func.isRequired,
   unselectBoard: PropTypes.func.isRequired,
+  deleteBoard: PropTypes.func.isRequired,
 };
 
 export default BoardList;
