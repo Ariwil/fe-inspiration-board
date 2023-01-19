@@ -286,6 +286,11 @@ function App() {
             <NewCard selectedBoard={selectedBoard} addCardCallback={addCard} />
           </div>
         </div>
+
+        <div id="Emoji-Title">
+          <h2> THANK YOU </h2>
+          <div className="Emoji-Box">✨❤️🧘🏻‍♂️🧘🏾‍♀️🧘🏼‍♀️🧘🏽‍♂️❤️✨</div>
+        </div>
       </div>
     </div>
   );
