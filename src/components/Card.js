@@ -1,8 +1,6 @@
 //-Card doesn’t automatically show up when added
 import PropTypes from "prop-types";
 
-import "./Card.css";
-
 function Card(props) {
   const cardId = props.id;
   const cardMessage = props.message;

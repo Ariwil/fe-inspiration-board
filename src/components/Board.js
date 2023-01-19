@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
 
-import "./Board.css";
-
 function Board(props) {
   const boardId = props.id;
   const boardTitle = props.title;

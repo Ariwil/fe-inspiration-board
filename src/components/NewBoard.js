@@ -1,4 +1,3 @@
-import "./NewBoard.css";
 import PropTypes from "prop-types";
 
 import { useState } from "react";
