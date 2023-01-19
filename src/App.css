@@ -167,8 +167,10 @@ body {
 
 .blue-card-color {
   background-color: aqua;
+  border-radius: 37px;
 }
 
 .purple-card-color {
   background-color: rgb(98, 68, 230);
+  border-radius: 37px;
 }
